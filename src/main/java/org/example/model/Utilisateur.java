@@ -1,6 +1,6 @@
 package org.example.model;
 
-public class Utilisateur {
+public interface Utilisateur {
    private int id;
     public String nom , prenom , email, motDePasse;
 

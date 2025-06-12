@@ -1,6 +1,5 @@
 package org.example.controller.DB;
 
-import org.example.model.Admin;
 import org.example.service.EmployeeService;
 import org.example.service.ServiceManager;
 import org.example.view.InterfaceAdmin;

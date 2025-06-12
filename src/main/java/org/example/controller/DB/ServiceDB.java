@@ -20,6 +20,7 @@ public class ServiceDB extends Env {
             System.out.printf("Erreur de l'enregistrement : " + " " + ex.getMessage());
         }
     }
+
     public List<Service> serviceList(){
         List<Service> listeService = new ArrayList<>();
         try(Connection con = DriverManager.getConnection(url , user , pass)) {
@@ -39,6 +40,8 @@ public class ServiceDB extends Env {
         }
         return listeService; 
     }
+
+
     public void abonnementEmployeeAuService(int employeeId, int serviceId) {
         try (Connection con = DriverManager.getConnection(url, user, pass)) {
             String sql = "INSERT INTO Abonnement (idEmployee, idService) VALUES (?, ?)";
@@ -51,4 +54,5 @@ public class ServiceDB extends Env {
             System.out.println("Erreur lors de l'abonnement : " + ex.getMessage());
         }
     }
+
 }

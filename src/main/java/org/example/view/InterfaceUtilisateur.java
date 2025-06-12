@@ -1,5 +1,6 @@
 package org.example.view;
 
+import org.example.controller.DB.ServiceDB;
 import org.example.service.ServiceManager;
 
 import java.sql.SQLOutput;
@@ -23,8 +24,8 @@ public class InterfaceUtilisateur {
                     System.out.println("en cours");
                     break;
                 case 3:
-                    System.out.println("En cours");
-                    break;
+                   //new ServiceDB().abonnementEmployeeAuService(employ,service);
+                   break;
                 case 4:
                     System.out.println("En cours");
                     break;

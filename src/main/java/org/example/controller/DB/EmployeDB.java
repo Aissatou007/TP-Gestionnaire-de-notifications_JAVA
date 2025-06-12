@@ -31,7 +31,6 @@ public class EmployeDB extends Env {
     }
 
     public Employee authentification(String prenom, String motDePasse) {
-        InterfaceUtilisateur interfaceUtilisateur;
         Employee employee = null;
         try (Connection con = DriverManager.getConnection(url, user, pass)) {
             //pour Employe
@@ -48,49 +47,20 @@ public class EmployeDB extends Env {
             ResultSet rs = stmt.executeQuery();
             //pour employe
             if (rs.next()) {
-                employee = new Employee(
+               employee = new Employee(
                         rs.getString("nom"),
                         rs.getString("prenom"),
                         rs.getString("email"),
                         rs.getString("motDePasse")
-                );
+               );
             }
-            InterfaceUtilisateur();
+            //new InterfaceUtilisateur().InterfaceUtilisateur();
             System.out.println("employé recuperer avec succès");
-
-
         } catch (Exception ex) {
             System.out.printf("Erreur de connection : " + " " + ex.getMessage());
 
         }
         return employee;
-    }
-
-    private void InterfaceUtilisateur() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("1.Voir les services ");
-        System.out.println("2.S'abonner à un service ");
-        System.out.println("3.Se désabonner d'un service ");
-        System.out.println("4.Envoyer notification ");
-        int choice = scanner.nextInt();
-        do {
-            switch (choice) {
-                case 1:
-                    new ServiceManager().listerService();
-                    break;
-                case 2:
-                    break;
-                case 3:
-                    break;
-                case 4:
-                    break;
-                case 5:
-                    System.out.println("Retour");
-                    break;
-            }
-        } while (choice != 5);
-
-
     }
 
     public List<Employee> employeeList() {
