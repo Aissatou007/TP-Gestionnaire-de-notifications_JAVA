@@ -48,6 +48,7 @@ public class EmployeDB extends Env {
             //pour employe
             if (rs.next()) {
                employee = new Employee(
+                       rs.getInt("id"),
                         rs.getString("nom"),
                         rs.getString("prenom"),
                         rs.getString("email"),
@@ -55,7 +56,7 @@ public class EmployeDB extends Env {
                );
             }
             //new InterfaceUtilisateur().InterfaceUtilisateur();
-            System.out.println("employé recuperer avec succès");
+            System.out.println("Un plaisir de vous revoir " +" "+employee.getNom() +" "+employee.getPrenom() +" !");
         } catch (Exception ex) {
             System.out.printf("Erreur de connection : " + " " + ex.getMessage());
 
@@ -72,7 +73,7 @@ public class EmployeDB extends Env {
             while (resultSet.next()) {
                 Employee employee = new Employee(
                         resultSet.getString("nom"),
-                        resultSet.getString("premon"),
+                        resultSet.getString("prenom"),
                         resultSet.getString("email"),
                         resultSet.getString("motDePasse")
                         );

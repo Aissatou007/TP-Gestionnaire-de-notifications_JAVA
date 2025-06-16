@@ -1,6 +1,5 @@
 package org.example;
 
-import org.example.service.AdminService;
 import org.example.service.EmployeeService;
 
 import java.util.Scanner;
@@ -10,27 +9,28 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Bonjour");
+        System.out.println("Bienvenue sur Alerte +");
         System.out.println("1. Creer un compte ");
-        System.out.println("2.S'authentifier en tant qu'empoye");
-        System.out.println("3.S'authentifier en tant qu'administrateur");
+        System.out.println("2.S'authentifier");
         System.out.println("4.Quitter");
         int choix;
          choix = scanner.nextInt();
+
+
             switch (choix){
                 case 1:
-                    new EmployeeService().enregistrerUtilisateur();
+                    new EmployeeService().creerCompte();
                     break;
                 case 2:
                     new EmployeeService().authentification();
                     break;
-                case 3:
-                    new AdminService().authentificationn();
                 case 4:
                     System.out.println("retour");
+                    break;
                 default:
                     System.out.println("choix non dispo !");
             }
+
 
     }
 }
